@@ -5,8 +5,8 @@
  */
 const Sidebar = () => {
   return (
-    <div className="h-[100svh] w-64 border shadow-md rounded-r-[30px] flex flex-col justify-between items-center py-6 gap-[50px] ">
-      <div className="border flex flex-col items-center gap-14">
+    <div className="hidden h-[100svh] w-80 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
+      <div className=" flex flex-col items-center gap-14">
         <div className="logo">
           <svg
             width="97"
@@ -21,7 +21,7 @@ const Sidebar = () => {
             ></path>
           </svg>
         </div>
-        <div className=" flex flex-col gap-2 items-center">
+        <div className=" flex flex-col gap-6 items-center">
           <span
             className="group relative  bg-[#F2F4F6] h-[48px] w-[200px] border rounded-xl border-[#D1D5DB] flex flex-row items-center"
             tabIndex={0}
@@ -53,7 +53,7 @@ const Sidebar = () => {
             />
           </span>
 
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-1">
             <li>
               <a
                 href="/#"
@@ -161,41 +161,36 @@ const Sidebar = () => {
           </ul>
         </div>
       </div>
-     
-      <div>
-              <a
-                href="/#"
-                className="bg-[#002147] text-white rounded-lg h-[56px] w-[223px] border border-[#002147] px-2 flex flex-row items-center gap-3"
-              >
-                <svg
-                  className="flex items-center justify-center text-[#F2F4F6] shrink-0"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="16"
-                  viewBox="0 0 18 16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <g clipPath="url(#clip0_1_98)">
-                    <path
-                      d="M17.9937 7.98746C17.9937 8.54996 17.525 8.99058 16.9937 8.99058H15.9937L16.0156 13.9968C16.0156 14.0812 16.0094 14.1656 16 14.25V14.7531C16 15.4437 15.4406 16.0031 14.75 16.0031H14.25C14.2156 16.0031 14.1813 16.0031 14.1469 16C14.1031 16.0031 14.0594 16.0031 14.0156 16.0031H13H12.25C11.5594 16.0031 11 15.4437 11 14.7531V14.0031V12.0031C11 11.45 10.5531 11.0031 10 11.0031H8C7.44688 11.0031 7 11.45 7 12.0031V14.0031V14.7531C7 15.4437 6.44063 16.0031 5.75 16.0031H5H4.00313C3.95625 16.0031 3.90937 16 3.8625 15.9968C3.825 16 3.7875 16.0031 3.75 16.0031H3.25C2.55938 16.0031 2 15.4437 2 14.7531V11.2531C2 11.225 2 11.1937 2.00312 11.1656V8.99058H1C0.4375 8.99058 0 8.55308 0 7.98746C0 7.70621 0.09375 7.45621 0.3125 7.23746L8.325 0.253082C8.54375 0.0343323 8.79375 0.00308228 9.0125 0.00308228C9.23125 0.00308228 9.48125 0.0655823 9.66875 0.221832L17.65 7.23746C17.9 7.45621 18.025 7.70621 17.9937 7.98746Z"
-                      fill="currentcolor"
-                    ></path>
-                  </g>
-                  <defs>
-                    <clippath id="clip0_1_98">
-                      <rect
-                        width="18"
-                        height="16"
-                        fill="white"
-                        transform="translate(0 0.00308228)"
-                      ></rect>
-                    </clippath>
-                  </defs>
-                </svg>
-                <p className="text-sm font-semibold">Dashboard</p>
-              </a>
-            </div>
+
+      <div className="group">
+        <a
+          href="/#"
+          className=" text-[#4C5564] hover:bg-[#002147] hover:text-white rounded-lg h-[56px] w-[223px] px-2 flex flex-row items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="currentcolor"
+            className="shrink-0 items-center justify-center text-gray-400 group-hover:text-white"
+            aria-hidden="true"
+          >
+            <g clipPath="url(#clip0_1_115)">
+              <path
+                d="M8 9C9.19347 9 10.3381 8.52589 11.182 7.68198C12.0259 6.83807 12.5 5.69347 12.5 4.5C12.5 3.30653 12.0259 2.16193 11.182 1.31802C10.3381 0.474106 9.19347 0 8 0C6.80653 0 5.66193 0.474106 4.81802 1.31802C3.97411 2.16193 3.5 3.30653 3.5 4.5C3.5 5.69347 3.97411 6.83807 4.81802 7.68198C5.66193 8.52589 6.80653 9 8 9ZM5.04063 10C2.25625 10 0 12.2562 0 15.0406C0 15.5719 0.43125 16 0.959375 16H15.0406C15.5719 16 16 15.5687 16 15.0406C16 12.2562 13.7438 10 10.9594 10H5.04063Z"
+                fill="currentcolor"
+              ></path>
+            </g>
+            <defs>
+              <clippath id="clip0_1_115">
+                <rect width="16" height="16" fill="currentcolor"></rect>
+              </clippath>
+            </defs>
+          </svg>
+          <p className="text-sm font-semibold">My Profile</p>
+        </a>
+      </div>
     </div>
   );
 };
