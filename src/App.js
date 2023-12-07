@@ -1,25 +1,10 @@
-import React, { useEffect, useState } from "react";
 import "./index.css";
 import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
+import UserTable from "./components/table";
+
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch("/users.json");
-        const data = await response.json();
-        setUsers(data);
-      } catch (error) {
-        console.error("Error fetching JSON:", error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
-
   return (
     <div className=" flex flex-row overflow-x-hidden ">
       <div className="">
@@ -41,47 +26,11 @@ function App() {
             <span className="px-2">Borrowers list</span>
             <span className="w-full h-5 "> </span>
             <div className=" my-4 w-full overflow-x-auto overflow-y-hidden">
-              <table className="w-full m-auto table-auto">
-                <tr className="border-b-2 text-left                                              ">
-                  <th className=" border-l-2 border-t-2 border-[#002147]">
-                    Name
-                  </th>
-       
-                  
-                  t
-                </tr>
-                <tr className="border-b-2">
-                  
-                  <td className=" border-t-2 border-[#002147]">
-                    Email
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    Phone
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    Address
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    City
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    State
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    Zip
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    Country
-                  </td>
-                  <td className=" border-t-2 border-[#002147]">
-                    Status
-                  </td>
-                </tr>
-              </table>
+            <UserTable/>
             </div>
           </div>
 
-          
+        
         </div>
       </div>
 
