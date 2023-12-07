@@ -5,7 +5,7 @@
  */
 const Sidebar = () => {
   return (
-    <div className="hidden h-[100svh] w-80 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
+    <div className="hidden h-[100svh] w-64 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
       <div className=" flex flex-col items-center gap-14">
         <div className="logo">
           <svg
