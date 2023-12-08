@@ -3,7 +3,7 @@ import React from "react";
 function Navbar() {
   return (
     <>
-      <div className=" flex flex-row items-center justify-between lg:px-8 md:px-6 px-4 w-full h-16 relative">
+      <div className=" flex flex-row items-center justify-between lg:px-8 md:px-6 px-4 w-[full] h-16 relative">
         <div className="flex flex-row gap-4 items-center">
           <span>
             <svg

@@ -177,10 +177,17 @@ const UserTable = () => {
             </td>
             <td className="py-5 px-5 border-b">{user.type}</td>
             <td className="py-5 px-5 border-b">{user.requestedLoanAmount}</td>
-            <td className="py-5 px-5 border-b">{user.date}</td>
+            <td className="py-5 px-5 border-b ">{user.date}</td>
             <td className="py-5 px-5 border-b">{user.purpose}</td>
             <td className="py-5 px-5 border-b ">
-            <span className={`rounded-full p-2 border border-red-200 bg-${user.status[1].bg}`}>{user.status[0].code}</span>
+                {/* if user.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
+                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center", {
+                    "bg-[#E5F9F2] text-[#10B981]": user.status[0].code === "Approved",
+                    "bg-[#FFF7ED] text-[#EF4444]": user.status[0].code === "Processing",
+                    "bg-[#FFF7ED] text-[#B91C1C]": user.status[0].code === "Cancelled"
+                })}>
+                    {user.status[0].code}
+                </span>
             </td>
             <td className="py-5 px-5 border-b inset-x">
               <span className="flex flex-row items-center gap-2">
