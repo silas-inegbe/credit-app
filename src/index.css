@@ -12,7 +12,12 @@ body {
   background-color: #F2F4F6;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+.inset-x {
+  box-shadow: -30px 2px 26px 0px rgba(0,0,0,0.05);
+  -webkit-box-shadow: -30px 2px 26px 0px rgba(0,0,0,0.05);
+  -moz-box-shadow: -30px 2px 26px 0px rgba(0,0,0,0.05);
 }
