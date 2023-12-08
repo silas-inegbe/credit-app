@@ -181,12 +181,12 @@ const UserTable = () => {
             <td className="py-5 px-5 border-b">{user.purpose}</td>
             <td className="py-5 px-5 border-b ">
                 {/* if user.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center", {
-                    "bg-[#E5F9F2] text-[#10B981]": user.status[0].code === "Approved",
-                    "bg-[#FFF7ED] text-[#EF4444]": user.status[0].code === "Processing",
-                    "bg-[#FFF7ED] text-[#B91C1C]": user.status[0].code === "Cancelled"
+                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center justify-center", {
+                    "bg-[#E5F9F2] text-[#10B981]": user.status === "Approved",
+                    "bg-[#FFF7ED] text-[#EF4444]": user.status === "Processing",
+                    "bg-[#FFF7ED] text-[#B91C1C]": user.status === "Cancelled"
                 })}>
-                    {user.status[0].code}
+                    {user.status}
                 </span>
             </td>
             <td className="py-5 px-5 border-b inset-x">

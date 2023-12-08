@@ -3,8 +3,15 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import UserTable from "./components/table";
 import Tabs from "./components/tab";
+import { useState } from "react";
 
 function App() {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+
   return (
     <div className=" flex flex-row overflow-x-hidden ">
       <div className="">
@@ -14,17 +21,25 @@ function App() {
         <Navbar />
         <div className="mt-16  lg:px-[2%] px-7 flex flex-col overflow-x-auto overflow-y-hidden">
           <div className="flex flex-row gap-1">
-            <span className=" h-11 px-4 font-semibold text-sm bg-[#002147] text-white rounded-t-2xl justify-center flex items-center">
+            <button
+              onClick={() => handleTabClick(1)}
+              className={` h-11 px-4 font-semibold text-lg  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 1 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
+                }`}>
               Borrowers
-            </span>
-            <span className=" h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center">
+            </button>
+            <button
+              onClick={() => handleTabClick(2)}
+              className={` h-11 px-4 font-semibold text-lg  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 2 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
+                }`}>
               Business Customers
-            </span>
+            </button>
           </div>
 
           <div className="flex flex-col lg:px-12 px-1 py-5 w-full bg-white overflow-x-auto overflow-y-hidden gap-1 rounded-r-xl rounded-bl-xl">
             <span className="lg:px-[2px] px-4 w-fit text-lg font-semibold">
-              Borrowers List
+              {
+                activeTab === 1 ? 'Borrowers' : 'Business Customers'}
+
             </span>
             <div className="w-full py-5">
               <div className="lg:flex md:flex flex-col space-y-4 lg:px-0 px-4 lg:flex-row md:flex-row justify-between items-center">
@@ -66,7 +81,9 @@ function App() {
               </div>
             </div>
             <div className=" my-4 w-full overflow-x-auto overflow-y-hidden flex flex-col space-y-6">
-              <UserTable />
+              { activeTab === 1 && <UserTable />}
+              { activeTab === 2 && <div>hhhhh </div>}
+
               <span>
                 <ol className="flex justify-center gap-1 text-xs font-medium">
                   <li>
