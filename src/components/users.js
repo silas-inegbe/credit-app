@@ -114,11 +114,12 @@ const UserTable = () => {
 
   //returning the table with the data
   return (
-    <table className="min-w-full bg-white border border-gray-300 table-fixed">
+    <div className="lg:w-full md:w-[200%] w-[275%]">
+      <table className="min-w-full bg-white border border-gray-300 table-fixed">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
           <th className="py-2 px-4 border-b text-sm font-[500]">
-            <span className="flex flex-row items-center gap-2">
+            <span className="flex flex-row items-center gap-2 text-sm">
               Borrower ID
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +138,7 @@ const UserTable = () => {
             </span>
           </th>
           <th className="py-2 px-4 border-b text-sm font-[500]">
-            <span className="flex flex-row items-center gap-2">
+            <span className="flex flex-row items-center gap-2 text-sm">
               Borrowers
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -259,8 +260,8 @@ const UserTable = () => {
         {/* //mapping the data to the table */}
         {users.map((user, index) => (
           <tr key={index} >
-            <td className="py-5 px-5 border-b">#{user.id}</td>
-            <td className="py-5  px-5 border-b ">
+            <td className="py-5 px-5 border-b text-[14px] font-semibold">#{user.id}</td>
+            <td className="py-5  px-5 border-b text-[14px]">
               <span className="flex items-center gap-2">
                 <img
                 className="h-6 w-6 rounded-full"
@@ -271,13 +272,13 @@ const UserTable = () => {
               </span>
               
             </td>
-            <td className="py-5 px-5 border-b">{user.type}</td>
-            <td className="py-5 px-5 border-b">{user.requestedLoanAmount}</td>
-            <td className="py-5 px-5 border-b ">{user.date}</td>
-            <td className="py-5 px-5 border-b">{user.purpose}</td>
-            <td className="py-5 px-5 border-b ">
+            <td className="py-5 px-5 border-b text-[14px]">{user.type}</td>
+            <td className="py-5 px-5 border-b text-[14px]">{user.requestedLoanAmount}</td>
+            <td className="py-5 px-5 border-b text-[14px]">{user.date}</td>
+            <td className="py-5 px-5 border-b text-[14px]">{user.purpose}</td>
+            <td className="py-5 px-5 border-b text-[14px]">
                 {/* if user.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center justify-center", {
+                <span className={cx("rounded-full px-3 py-2 text-[14px] flex items-center justify-center", {
                     "bg-[#E5F9F2] text-[#10B981]": user.status === "Approved",
                     "bg-[#FFF7ED] text-[#EF4444]": user.status === "Processing",
                     "bg-[#FFF7ED] text-[#B91C1C]": user.status === "Cancelled"
@@ -285,7 +286,7 @@ const UserTable = () => {
                     {user.status}
                 </span>
             </td>
-            <td className="py-5 px-5 border-b inset-x">
+            <td className="py-5 px-5 border-b text-[14px] inset-x">
               <span className="flex flex-row items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -377,6 +378,8 @@ const UserTable = () => {
         ))}
       </tbody>
     </table>
+    </div>
+    
   );
 };
 //exporting the table component
