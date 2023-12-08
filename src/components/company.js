@@ -113,7 +113,7 @@ const CompanyTable = () => {
   ];
 
   //returning the table with the data
-  return ( <div className="xl:w-[110%] lg:w-[140%] md:w-[188%] w-[250%]">
+  return ( <div className="xl:w-[110%] lg:w-[140%] md:w-[188%] min-w-[285%]">
     <table className=" bg-white border border-gray-300 table-fixed">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
