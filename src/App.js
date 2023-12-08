@@ -1,9 +1,10 @@
 import "./index.css";
 import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
-import UserTable from "./components/table";
+import UserTable from "./components/users";
 import Tabs from "./components/tab";
 import { useState } from "react";
+import CompanyTable from "./components/company";
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);
@@ -23,13 +24,13 @@ function App() {
           <div className="flex flex-row gap-1">
             <button
               onClick={() => handleTabClick(1)}
-              className={` h-11 px-4 font-semibold text-lg  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 1 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
+              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 1 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
                 }`}>
               Borrowers
             </button>
             <button
               onClick={() => handleTabClick(2)}
-              className={` h-11 px-4 font-semibold text-lg  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 2 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
+              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 2 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
                 }`}>
               Business Customers
             </button>
@@ -50,6 +51,7 @@ function App() {
                     <option value="20">20</option>
                     <option value="30">30</option>
                     <option value="30">40</option>
+                    <option value="30">50</option>
                   </select>
                   <span className="text-sm text-[#002147]">entries</span>
                 </div>
@@ -82,7 +84,7 @@ function App() {
             </div>
             <div className=" my-4 w-full overflow-x-auto overflow-y-hidden flex flex-col space-y-6">
               { activeTab === 1 && <UserTable />}
-              { activeTab === 2 && <div>hhhhh </div>}
+              { activeTab === 2 && <CompanyTable/>}
 
               <span>
                 <ol className="flex justify-center gap-1 text-xs font-medium">
