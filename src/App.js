@@ -109,12 +109,12 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               <div className=" my-4 w-full overflow-x-auto overflow-y-hidden flex flex-col space-y-6 ">
                 {activeTab === 1 && <UserTable />}
                 {activeTab === 2 && <CompanyTable />}
 
-                <div className={`items-end px-5 py-4 justify-end ${activeTab === 1 ? "lg:w-[1160px] xl:w-[1162px] w-[280%] md:w-[200%]" : "lg:w-[110%] w-[350%] xl:w-[1400px] md:w-[188%]" }  my-5 flex flex-col overflow-x-auto`}>
+                <div className={`items-end px-5 py-4 justify-end ${activeTab === 1 ? "lg:w-[1160px] xl:w-[1162px] w-[280%] md:w-[200%] 2xl:w-auto" : "lg:w-[110%] w-[350%] xl:w-[1400px] md:w-[188%] 2xl:w-auto"}  my-1 flex flex-col overflow-x-auto`}>
                   <ol className="flex justify-center gap-0 text-base font-medium">
                     <li>
                       <a

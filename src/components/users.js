@@ -121,8 +121,8 @@ const UserTable = () => {
   };
   //returning the table with the data
   return (
-    <div className="lg:w-[1160px] xl:w-[1162px] w-[280%] md:w-[200%]">
-      <table className="w-full bg-white border border-gray-300">
+    <div className="lg:w-[1160px] xl:w-[1162px] sm:w-[280%] 2xl:w-auto md:w-[200%]">
+      <table className="min-w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] h-14 table-fixed ">
         <tr>
           <th className={headClass()}>
@@ -294,7 +294,7 @@ const UserTable = () => {
                 </span>
             </td>
             <td className="py-5 px-5 border-b text-sm inset-x">
-              <span className="flex flex-row items-center gap-2">
+              <span className="flex flex-row items-center justify-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="17"
