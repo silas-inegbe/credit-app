@@ -1,11 +1,12 @@
-import React from "react";
 
-function Navbar() {
+function Navbar({toggle}) {
+
+
   return (
     <>
-      <div className=" flex flex-row items-center justify-between lg:px-8 md:px-6 px-4 w-[full] h-16 relative">
+      <div className=" flex flex-row items-center justify-between lg:px-8 md:px-6 px-4 w-[full] h-16">
         <div className="flex flex-row gap-4 items-center">
-          <span>
+          <button className="cursor-pointer" onClick={toggle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -18,7 +19,7 @@ function Navbar() {
                 fill="#002147"
               ></path>
             </svg>
-          </span>
+          </button>
           <h1 className="text-lg font-semibold text-[#002147]">Dashboard</h1>
         </div>
 

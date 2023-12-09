@@ -4,42 +4,73 @@ import Navbar from "./components/navbar";
 import UserTable from "./components/users";
 import { useState } from "react";
 import CompanyTable from "./components/company";
-import TagDivs from "./components/tab"
+import TagDivs from "./components/tab";
 function App() {
   const [activeTab, setActiveTab] = useState(1);
+  const [show, setShow] = useState(true);
 
+  const toggle = () => {
+    setShow(!show);
+  };
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
 
   return (
-    <div className=" flex flex-row overflow-x-hidden ">
-      <div className="">
-        <Sidebar />
+    <>
+
+{/* <div className="min-h-screen flex flex-col">
+      
+
+      <div className="flex flex-grow">
+        {show && (
+          <div className="w-48 bg-blue-200 p-4">
+            Fixed Width
+          </div>
+        )}
+
+        <div className={`flex-grow ${!show && 'ml-0'} bg-green-200 p-4`}>
+          Flexible Width
+          <button onClick={toggle} className="p-4 bg-blue-500 text-white">
+        Toggle Divs
+      </button>
+        </div>
       </div>
-      <div className="[ml-64] w-full right-0  overflow-x-auto ">
-        <Navbar />
-        <div className="mt-16  lg:px-[2%] px-7 flex flex-col overflow-x-auto overflow-y-hidden">
+    </div> */}
+
+    <div className=" flex flex-grow overflow-x-hidden ">
+
+      {show && (
+        <div className=" h-[100svh] w-64">
+          <Sidebar />
+        </div>
+      )}
+
+      <div className={`lg:flex-grow md:flex-grow flex-grow overflow-x-auto ${!show && "ml-0"}`}>
+        <Navbar toggle={toggle} />
+        <div className=" w-full mt-16  lg:px-[2%] px-7 flex flex-col overflow-x-auto overflow-y-hidden">
           <div className="flex flex-row gap-1">
             <button
               onClick={() => handleTabClick(1)}
-              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 1 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
-                }`}>
+              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${
+                activeTab === 1 ? "bg-[#002147] text-white" : "bg-[#f5f8ff]"
+              }`}
+            >
               Borrowers
             </button>
             <button
               onClick={() => handleTabClick(2)}
-              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${activeTab === 2 ? 'bg-[#002147] text-white' : 'bg-[#f5f8ff]'
-                }`}>
+              className={` h-11 px-4 font-semibold text-sm  text-[#002147] rounded-t-2xl justify-center flex items-center ${
+                activeTab === 2 ? "bg-[#002147] text-white" : "bg-[#f5f8ff]"
+              }`}
+            >
               Business Customers
             </button>
           </div>
 
           <div className="flex flex-col lg:px-12 px-1 py-5 w-full bg-white overflow-x-auto overflow-y-hidden gap-1 rounded-r-xl rounded-bl-xl">
             <span className="lg:px-[2px] px-4 w-fit text-lg font-semibold">
-              {
-                activeTab === 1 ? 'Borrowers' : 'Business Customers'}
-
+              {activeTab === 1 ? "Borrowers" : "Business Customers"}
             </span>
             <div className="w-full py-5">
               <div className="lg:flex md:flex flex-col space-y-4 lg:px-0 px-4 lg:flex-row md:flex-row justify-between items-center">
@@ -82,8 +113,8 @@ function App() {
               </div>
             </div>
             <div className=" my-4 w-full overflow-x-auto overflow-y-hidden flex flex-col space-y-6">
-              { activeTab === 1 && <UserTable />}
-              { activeTab === 2 && <CompanyTable/>}
+              {activeTab === 1 && <UserTable />}
+              {activeTab === 2 && <CompanyTable />}
 
               <span className="my-5">
                 <ol className="flex justify-center gap-1 text-xs font-medium">
@@ -161,11 +192,12 @@ function App() {
               </span>
             </div>
 
-            <TagDivs/>
+            <TagDivs />
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }
 

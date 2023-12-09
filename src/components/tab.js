@@ -15,12 +15,12 @@ const TagDivs = () => {
 
       <div className="flex flex-grow">
         {showFixedDiv && (
-          <div className="w-48 bg-lightblue p-4">
+          <div className="w-48 bg-blue-200 p-4">
             Fixed Width
           </div>
         )}
 
-        <div className={`flex-grow ${!showFixedDiv && 'ml-0'} bg-lightgreen p-4`}>
+        <div className={`flex-grow ${!showFixedDiv && 'ml-0'} bg-green-200 p-4`}>
           Flexible Width
         </div>
       </div>
