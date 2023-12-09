@@ -110,15 +110,22 @@ const UserTable = () => {
        
       "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAO+SURBVHgBrVVdbBRVFP7undmd2W13u9t2u/1Rsdqt1oUtCAESQgKR6HaRRGJIfPTB+KCJIT76gk/qm5rwaCLERA1BRUnBEGKtkRgbcKHSWmkpBVpK2W5/gLa7szN3ODOwwHZ3dvn7ksm9c+4537nn3nvOYaiAjw8ccL8ci3RKHFEw1mgwQxLMdUURGOqKxP6qZM+cFr7993jYr9Z9wDh7j34DpXSEEFclif+SZeanO1vXjD2Qg58uJAMK+B5TmLvxEDDBvuBiaU8isvG6o4NDF/9pdunsKIljeAQIYQ5o4PE3I53jeRnPT348caLBrfPeRyW3yTiLqsz8bf/fx+uKHLjD3u9NoA2PC4ZIKFR/sMBB90jybcbYVjwhmCa2WJzWXLYFjH3EKhhdOT+Ja5enaYMMrbEV8Nf6yurrpvk+DfvYD2f74qrHfdRJ0SI99k0P5lMFjwPrXl2NDV1ryzqhS9/KifwNJ4UbMzdwaG93EbmFk8dOY2zgEsrBFMYuTtnZ6aQw1DeMekXGO+taEapSitbP/DGIsg6AzbKhGyspG0sqpCbS9pl3tTfZX1YXyOgGekavYSFn4PDIVFkHsiyHuSQxj5OCTiQGPYk8FJmjRnVhW1sY6cUsctkchCHKuDDrOANPOy17fR7MLmnIkKP7ceS/SfReSKEm5Ad3iN6CIcwlntNzjnG2tDVBox1+13/vMsVCDnJGR+OzDdjx7msoB875gEwh/knZsKqUQseGdnscHpnEwUWBnambYNVubHwlikDHClQCHe5pdng4uYVqSI+TksJlBFwqLg1eRFeagmUMQ3OLUHdsg8YEbuoa5nMZIjOLbHNaNm4n8M//nzopy9La5cRRfxgeyXU7iukp/N7dC4leUvOqCOLrC5NsOruAscVZZIWeF53b/vzqF+xSIUt8Lw1f51ck2uXKmkaoXL7HoEp46fX19vRpT3H/qVeqSMWF/uuTVIuoO3D2iSW3n8D2tjX7mIm7x/SMJ1hIjsLG0UBkpVAtu9Gi+q1i15No7dx/14GFVHp6lxWWpdTs8Zcwvp3JYaXa3qkTKLrz2sLUW6U2hiPn+p+K+IK/hjy+6HJDwxTom72MDl/YvvRSoB59VlXVuNfrncjLCrIk0R4br1OqNtEZfg4UPguJcbiZVPK1WCCbL6mnbL6fvMiBhdra2vlgMPghGTxH31ckunrHGbUNKh+ioDTMaZr22ejoaAvZ7KZvbjlfpT5jY2ZmZhNl5Yun5sabWtSAGVaqJjKZzGAymTyTSCSy5WxvATzzVL4w92cqAAAAAElFTkSuQmCC"
     }
-  ] 
-
+  ];
+//stored the body style in a constant
+  const bodyClass = (extraClasses) => {
+    return `lg:py-5 md:py-4 py-3 pl-5 border-b lg:text-sm md:text-sm text-xs ${extraClasses}`;
+  };
+//stored the head style in a constant
+  const headClass = (extraClasses) => {
+    return `lg:px-4 md:px-3 pl-5 border-b text-sm font-[500] ${extraClasses}`;
+  };
   //returning the table with the data
   return (
-    <div className="lg:w-full w-[20%] xl:w-[full] md:w-[200%]">
+    <div className="lg:w-[1160px] xl:w-[1162px] w-[280%] md:w-[200%]">
       <table className="w-full bg-white border border-gray-300">
-      <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
+      <thead className="bg-[#E5E8EC] h-14 table-fixed ">
         <tr>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2 text-sm">
               Borrower ID
               <svg
@@ -137,7 +144,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2 text-sm">
               Borrowers
               <svg
@@ -156,7 +163,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Load Product
               <svg
@@ -175,7 +182,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Requested Loan Amount (RM)
               <svg
@@ -194,7 +201,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Date
               <svg
@@ -213,7 +220,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Purpose
               <svg
@@ -232,7 +239,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Status
               <svg
@@ -251,7 +258,7 @@ const UserTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500] inset-x">
+          <th className="py-2 lg:px-4 md:px-3 px-2 border-b text-sm font-[500] inset-x">
             <span className="flex flex-row items-center gap-2">Action</span>
           </th>
         </tr>
@@ -272,13 +279,13 @@ const UserTable = () => {
               </span>
               
             </td>
-            <td className="py-5 px-5 border-b text-sm">{user.type}</td>
-            <td className="py-5 px-5 border-b text-sm">{user.requestedLoanAmount}</td>
-            <td className="py-5 px-5 border-b text-sm">{user.date}</td>
-            <td className="py-5 px-5 border-b text-sm">{user.purpose}</td>
-            <td className="py-5 px-5 border-b text-sm">
+            <td className={bodyClass()}>{user.type}</td>
+  <td className={bodyClass()}>{user.requestedLoanAmount}</td>
+  <td className={bodyClass()}>{user.date}</td>
+  <td className={bodyClass()}>{user.purpose}</td>
+            <td className="lg:py-5 md:py-4 py-3 px-5 border-b text-sm">
                 {/* if user.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center justify-center", {
+                <span className={cx("rounded-full px-2 py-2 lg:text-sm md:text-sm text-xs flex items-center justify-center", {
                     "bg-[#E5F9F2] text-[#10B981]": user.status === "Approved",
                     "bg-[#FFF7ED] text-[#EF4444]": user.status === "Processing",
                     "bg-[#FFF7ED] text-[#B91C1C]": user.status === "Cancelled"

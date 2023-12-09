@@ -111,13 +111,20 @@ const CompanyTable = () => {
 
     }
   ];
-
+  //stored the body style in a constant
+  const bodyClass = (extraClasses) => {
+    return `lg:py-5 md:py-4 py-2 pl-5 border-b lg:text-sm md:text-sm text-xs ${extraClasses}`;
+  };
+//stored the head style in a constant
+  const headClass = (extraClasses) => {
+    return `lg:px-4 md:px-3 pl-5 border-b text-sm font-[500] ${extraClasses}`;
+  };
   //returning the table with the data
-  return ( <div className=" lg:w-[110%] w-[290%] xl:w-[120%] md:w-[188%]">
+  return ( <div className=" lg:w-[110%] w-[280%] xl:w-[1400px] md:w-[188%]">
     <table className=" w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Borrower ID
               <svg
@@ -136,7 +143,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Business Customer
               <svg
@@ -155,7 +162,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Load Product
               <svg
@@ -174,7 +181,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Requested Loan Amount (RM)
               <svg
@@ -193,7 +200,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Date
               <svg
@@ -212,7 +219,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Purpose
               <svg
@@ -231,7 +238,7 @@ const CompanyTable = () => {
               </svg>
             </span>
           </th>
-          <th className="py-2 px-4 border-b text-sm font-[500]">
+          <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Status
               <svg
@@ -259,8 +266,8 @@ const CompanyTable = () => {
         {/* //mapping the data to the table */}
         {companies.map((company, index) => (
           <tr key={index}>
-            <td className="py-5 px-5 border-b text-sm font-semibold">#{company.ID}</td>
-            <td className="py-5 px-5 border-b ">
+            <td className="py-4 px-5 border-b text-sm font-semibold">#{company.ID}</td>
+            <td className="py-4 px-5 border-b ">
                 <span className="flex flex-row gap-2 items-center">
                     <img
                 className="h-6 w-6 rounded-full"
@@ -274,13 +281,13 @@ const CompanyTable = () => {
               
               
             </td>
-            <td className="py-5 px-5 border-b text-sm">{company.product}</td>
-            <td className="py-5 px-5 border-b text-sm">{company.amount}</td>
-            <td className="py-5 px-5 border-b text-sm">{company.date}</td>
-            <td className="py-5 px-5 border-b text-sm">{company.purpose}</td>
+            <td className={bodyClass()}>{company.product}</td>
+            <td className={bodyClass()}>{company.amount}</td>
+            <td className={bodyClass()}>{company.date}</td>
+            <td className={bodyClass()}>{company.purpose}</td>
             <td className="py-5 px-5 border-b ">
                 {/* if company.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center justify-center", {
+                <span className={cx("rounded-full px-2 py-2 lg:text-sm md:text-sm text-xs flex items-center justify-center", {
                     "bg-[#E5F9F2] text-[#10B981]": company.status === "Approved",
                     "bg-[#FFF7ED] text-[#EF4444]": company.status === "Processing",
                     "bg-[#FFF7ED] text-[#B91C1C]": company.status === "Cancelled"
@@ -288,7 +295,7 @@ const CompanyTable = () => {
                     {company.status}
                 </span>
             </td>
-            <td className="py-5 px-5 border-b inset-x">
+            <td className="py-3 px-5 border-b inset-x">
               <span className="flex flex-row items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

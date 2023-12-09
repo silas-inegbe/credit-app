@@ -3,12 +3,12 @@
  * Renders a sidebar with a logo, search input, and a dashboard link.
  * @returns {JSX.Element} The rendered Sidebar component.
  */
-const Sidebar = () => {
+const Sidebar = ({ toggle }) => {
   return (
-    <div className=" flex fixed h-[100svh] w-64 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
+    <div className=" flex sticky top-0 z-[999] h-[100svh] w-64 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
       <div className=" flex flex-col items-center gap-14">
-        <div className="flex flex-col gap-4 items-center justify-center border w-full">
-          <span className=" h-5 w-full bg-black">hhh</span>
+        <div className="flex flex-col gap-10 items-center justify-center w-full">
+          <span className="lg:hidden md:block block px-2 h-5 w-full  text-[#002147]"><p onClick={toggle} className="text-sm font-semibold cursor-pointer">Close</p></span>
           <div className="logo">
             <svg
               width="97"
@@ -24,7 +24,7 @@ const Sidebar = () => {
             </svg>
           </div>
         </div>
-        
+
         <div className=" flex flex-col gap-6 items-center">
           <span
             className="group relative  bg-[#F2F4F6] h-[48px] w-[200px] border rounded-xl border-[#D1D5DB] flex flex-row items-center"
@@ -133,33 +133,8 @@ const Sidebar = () => {
                 href="/#"
                 className=" text-[#4C5564] hover:bg-[#002147] hover:text-white rounded-lg h-[56px] w-[223px] px-2 flex flex-row items-center gap-3"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  className="text-gray-400 group-hover:text-white shrink-0 flex items-center justify-center"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <g clipPath="url(#clip0_1_104)">
-                    <path
-                      d="M14.6667 0.666748H1.33333C0.597333 0.666748 0 1.26408 0 2.00008V14.0001C0 14.7361 0.597333 15.3334 1.33333 15.3334H14.6667C15.4027 15.3334 16 14.7361 16 14.0001V2.00008C16 1.26408 15.4027 0.666748 14.6667 0.666748ZM14.6667 14.0001H1.33333V2.00008H14.6667V14.0001ZM12.6667 4.66675H3.33333V6.66675H12.6667V4.66675ZM12.6667 7.33341H3.33333V9.33341H12.6667V7.33341ZM12.6667 10.0001H3.33333V12.0001H12.6667V10.0001Z"
-                      fill="currentcolor"
-                    ></path>
-                  </g>
-                  <defs>
-                    <clippath id="clip0_1_104">
-                      <rect
-                        width="16"
-                        height="16"
-                        fill="currentcolor"
-                        transform="translate(0 0.666748)"
-                      ></rect>
-                    </clippath>
-                  </defs>
-                </svg>
-                <p className="text-sm font-semibold">Invoices</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentcolor" className="text-gray-400 group-hover:text-white shrink-0 flex items-center justify-center" aria-hidden="true"><path d="M2 2.00308C2 1.44996 1.55313 1.00308 1 1.00308C0.446875 1.00308 0 1.44996 0 2.00308V12.5031C0 13.8843 1.11875 15.0031 2.5 15.0031H15C15.5531 15.0031 16 14.5562 16 14.0031C16 13.45 15.5531 13.0031 15 13.0031H2.5C2.225 13.0031 2 12.7781 2 12.5031V2.00308ZM14.7063 4.70933C15.0969 4.31871 15.0969 3.68433 14.7063 3.29371C14.3156 2.90308 13.6812 2.90308 13.2906 3.29371L10 6.58746L8.20625 4.79371C7.81563 4.40308 7.18125 4.40308 6.79063 4.79371L3.29063 8.29371C2.9 8.68433 2.9 9.31871 3.29063 9.70933C3.68125 10.1 4.31563 10.1 4.70625 9.70933L7.5 6.91871L9.29375 8.71246C9.68437 9.10308 10.3188 9.10308 10.7094 8.71246L14.7094 4.71246L14.7063 4.70933Z" fill="currentcolor"></path></svg>
+                <p className="text-sm font-semibold">Insights</p>
               </a>
             </li>
           </ul>
