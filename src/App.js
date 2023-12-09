@@ -2,10 +2,9 @@ import "./index.css";
 import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import UserTable from "./components/users";
-import Tabs from "./components/tab";
 import { useState } from "react";
 import CompanyTable from "./components/company";
-
+import TagDivs from "./components/tab"
 function App() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -86,14 +85,13 @@ function App() {
               { activeTab === 1 && <UserTable />}
               { activeTab === 2 && <CompanyTable/>}
 
-              <span>
+              <span className="my-5">
                 <ol className="flex justify-center gap-1 text-xs font-medium">
                   <li>
                     <a
                       href="/#"
                       className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
                     >
-                      <span className="sr-only">Prev Page</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-3 w-3"
@@ -118,7 +116,7 @@ function App() {
                     </a>
                   </li>
 
-                  <li className="block h-8 w-8 rounded border-blue-600 bg-blue-600 text-center leading-8 text-white">
+                  <li className="block h-8 w-8 rounded border-[#002147] bg-[#002147] text-center leading-8 text-white">
                     2
                   </li>
 
@@ -145,7 +143,6 @@ function App() {
                       href="/#"
                       className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
                     >
-                      <span className="sr-only">Next Page</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-3 w-3"
@@ -163,10 +160,9 @@ function App() {
                 </ol>
               </span>
             </div>
-          </div>
 
-          <Tabs />
-          <div className="flex flex-row justify-between items-center mt-4"></div>
+            <TagDivs/>
+          </div>
         </div>
       </div>
     </div>

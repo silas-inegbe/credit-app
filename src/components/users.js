@@ -114,8 +114,8 @@ const UserTable = () => {
 
   //returning the table with the data
   return (
-    <div className="lg:w-full md:w-[200%] w-[275%]">
-      <table className="min-w-full bg-white border border-gray-300 table-fixed">
+    <div className="lg:w-full w-[20%] xl:w-[full] md:w-[200%]">
+      <table className="w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
           <th className="py-2 px-4 border-b text-sm font-[500]">
@@ -260,8 +260,8 @@ const UserTable = () => {
         {/* //mapping the data to the table */}
         {users.map((user, index) => (
           <tr key={index} >
-            <td className="py-5 px-5 border-b text-[14px] font-semibold">#{user.id}</td>
-            <td className="py-5  px-5 border-b text-[14px]">
+            <td className="py-5 px-5 border-b text-sm font-semibold">#{user.id}</td>
+            <td className="py-5  px-5 border-b text-sm">
               <span className="flex items-center gap-2">
                 <img
                 className="h-6 w-6 rounded-full"
@@ -272,13 +272,13 @@ const UserTable = () => {
               </span>
               
             </td>
-            <td className="py-5 px-5 border-b text-[14px]">{user.type}</td>
-            <td className="py-5 px-5 border-b text-[14px]">{user.requestedLoanAmount}</td>
-            <td className="py-5 px-5 border-b text-[14px]">{user.date}</td>
-            <td className="py-5 px-5 border-b text-[14px]">{user.purpose}</td>
-            <td className="py-5 px-5 border-b text-[14px]">
+            <td className="py-5 px-5 border-b text-sm">{user.type}</td>
+            <td className="py-5 px-5 border-b text-sm">{user.requestedLoanAmount}</td>
+            <td className="py-5 px-5 border-b text-sm">{user.date}</td>
+            <td className="py-5 px-5 border-b text-sm">{user.purpose}</td>
+            <td className="py-5 px-5 border-b text-sm">
                 {/* if user.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-3 py-2 text-[14px] flex items-center justify-center", {
+                <span className={cx("rounded-full px-3 py-2 text-sm flex items-center justify-center", {
                     "bg-[#E5F9F2] text-[#10B981]": user.status === "Approved",
                     "bg-[#FFF7ED] text-[#EF4444]": user.status === "Processing",
                     "bg-[#FFF7ED] text-[#B91C1C]": user.status === "Cancelled"
@@ -286,7 +286,7 @@ const UserTable = () => {
                     {user.status}
                 </span>
             </td>
-            <td className="py-5 px-5 border-b text-[14px] inset-x">
+            <td className="py-5 px-5 border-b text-sm inset-x">
               <span className="flex flex-row items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
