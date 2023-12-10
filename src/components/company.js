@@ -1,4 +1,10 @@
+/**
+ * This is the table component that contains company data.
+ * @returns {JSX.Element} The rendered table component.
+ */
 import cx from "classnames";
+
+
 //this is the table component that contains company data
 const CompanyTable = () => {
   const companies = [
@@ -115,15 +121,16 @@ const CompanyTable = () => {
   const bodyClass = (extraClasses) => {
     return `lg:py-5 md:py-4 py-2 pl-5 border-b lg:text-sm md:text-sm text-xs ${extraClasses}`;
   };
-//stored the head style in a constant
+  //stored the head style in a constant
   const headClass = (extraClasses) => {
     return `lg:px-4 md:px-3 pl-5 border-b text-sm font-[500] ${extraClasses}`;
   };
   //returning the table with the data
-  return ( <div className=" lg:w-[110%] w-[370%] xl:w-[1400px] md:w-[188%] 2xl:w-auto">
+  return (<div className=" lg:w-[110%] w-[370%] xl:w-[1400px] md:w-[188%] 2xl:w-auto">
     <table className=" w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
+          {/* utilizig the styles stored in the constant headclass */}
           <th className={headClass()}>
             <span className="flex flex-row items-center gap-2">
               Borrower ID
@@ -268,32 +275,31 @@ const CompanyTable = () => {
           <tr key={index}>
             <td className="py-4 px-5 border-b text-sm font-semibold">#{company.ID}</td>
             <td className="py-4 px-5 border-b ">
-                <span className="flex flex-row gap-2 items-center">
-                    <img
-                className="h-6 w-6 rounded-full"
-                src={company.avatar}
-                alt="avatar"
-              /> <p className="text-sm">
+              <span className="flex flex-row gap-2 items-center">
+                <img
+                  className="h-6 w-6 rounded-full"
+                  src={company.avatar}
+                  alt="avatar"
+                /> <p className="text-sm">
 
-              {company.name}
-              </p>
-                </span>
-              
-              
+                  {company.name}
+                </p>
+              </span>
             </td>
+            {/* utilizing the styles stored in the consatnt bodyclass */}
             <td className={bodyClass()}>{company.product}</td>
             <td className={bodyClass()}>{company.amount}</td>
             <td className={bodyClass()}>{company.date}</td>
             <td className={bodyClass()}>{company.purpose}</td>
             <td className="py-5 px-5 border-b ">
-                {/* if company.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
-                <span className={cx("rounded-full px-2 py-2 lg:text-sm md:text-sm text-xs flex items-center justify-center", {
-                    "bg-[#E5F9F2] text-[#10B981]": company.status === "Approved",
-                    "bg-[#FFF7ED] text-[#EF4444]": company.status === "Processing",
-                    "bg-[#FFF7ED] text-[#B91C1C]": company.status === "Cancelled"
-                })}>
-                    {company.status}
-                </span>
+              {/* if company.status[0].code = Approved, show green background, if code = Processing, show red backgroud */}
+              <span className={cx("rounded-full px-2 py-2 lg:text-sm md:text-sm text-xs flex items-center justify-center", {
+                "bg-[#E5F9F2] text-[#10B981]": company.status === "Approved",
+                "bg-[#FFF7ED] text-[#EF4444]": company.status === "Processing",
+                "bg-[#FFF7ED] text-[#B91C1C]": company.status === "Cancelled"
+              })}>
+                {company.status}
+              </span>
             </td>
             <td className="py-3 px-5 border-b inset-x">
               <span className="flex flex-row items-center gap-2">
@@ -388,7 +394,7 @@ const CompanyTable = () => {
       </tbody>
     </table>
   </div>
-    
+
   );
 };
 //exporting the table component

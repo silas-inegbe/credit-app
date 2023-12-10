@@ -1,6 +1,7 @@
 /**
- * Sidebar component.
- * Renders a sidebar with a logo, search input, and a dashboard link.
+ * Renders the Sidebar component.
+ * @param {Object} props - The component props.
+ * @param {Function} props.toggle - The toggle function.
  * @returns {JSX.Element} The rendered Sidebar component.
  */
 const Sidebar = ({ toggle }) => {

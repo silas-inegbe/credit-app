@@ -1,4 +1,10 @@
 import cx from "classnames";
+/**
+ * Represents a table of users.
+ * @returns {JSX.Element} The UserTable component.
+ */
+
+
 //this is the table component that contains user data
 const UserTable = () => {
   const users = [
@@ -121,7 +127,7 @@ const UserTable = () => {
   };
   //returning the table with the data
   return (
-    <div className="lg:w-[1160px] xl:w-[1160px] w-[320%] 2xl:w-auto md:w-[200%] m-auto">
+    <div className="lg:w-[1160px] xl:w-[1160px] w-[320%] 2xl:w-auto md:w-[200%]">
       <table className="min-w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] h-14 table-fixed ">
         <tr>

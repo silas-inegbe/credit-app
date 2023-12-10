@@ -1,4 +1,10 @@
 
+/**
+ * Renders a navbar component.
+ * @param {Object} props - The component props.
+ * @param {Function} props.toggle - The function to toggle the navbar.
+ * @returns {JSX.Element} The rendered navbar component.
+ */
 function Navbar({toggle}) {
 
 
