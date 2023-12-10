@@ -121,7 +121,7 @@ const UserTable = () => {
   };
   //returning the table with the data
   return (
-    <div className="lg:w-[1160px] xl:w-[1162px] sm:w-[280%] 2xl:w-auto md:w-[200%]">
+    <div className="lg:w-[1160px] xl:w-[1160px] w-[320%] 2xl:w-auto md:w-[200%] m-auto">
       <table className="min-w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] h-14 table-fixed ">
         <tr>

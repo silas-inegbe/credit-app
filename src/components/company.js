@@ -120,7 +120,7 @@ const CompanyTable = () => {
     return `lg:px-4 md:px-3 pl-5 border-b text-sm font-[500] ${extraClasses}`;
   };
   //returning the table with the data
-  return ( <div className=" lg:w-[110%] w-[280%] xl:w-[1400px] md:w-[188%]">
+  return ( <div className=" lg:w-[110%] w-[370%] xl:w-[1400px] md:w-[188%] 2xl:w-auto">
     <table className=" w-full bg-white border border-gray-300">
       <thead className="bg-[#E5E8EC] text-left h-14 table-fixed ">
         <tr>
