@@ -6,7 +6,7 @@
  */
 const Sidebar = ({ toggle }) => {
   return (
-    <div className=" flex sticky top-0 z-[999] h-[100svh] w-64 border shadow-md rounded-r-[30px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
+    <div className=" flex sticky top-0 z-[999] h-[100svh] w-64 border shadow-md rounded-r-[20px]  flex-col justify-between items-center py-6 gap-[50px] bg-white">
       <div className=" flex flex-col items-center gap-14">
         <div className="flex flex-col gap-10 items-center justify-center w-full">
           <span className="lg:hidden md:block block px-2 h-5 w-full  text-[#002147]"><p onClick={toggle} className="text-sm font-semibold cursor-pointer">Close</p></span>
